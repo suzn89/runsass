@@ -21,10 +21,11 @@ h1 {
 
 .list li:last-child {
   font-size: 20px;
+  color: #ffffff;
 }
 
 .list li > a {
   text-decoration: none;
-  color: #f1435a;
+  color: #ff00ff;
 }
 /*# sourceMappingURL=test.css.map */
