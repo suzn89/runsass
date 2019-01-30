@@ -1,5 +1,6 @@
+@charset "utf-8";
 $primaryColor:#46ba97;
-$primaryHover: #38a685;
+$primaryHover:#38a685;
 $secondaryColor:#9ba5a7;
 $secondaryHover:#8f999b;
 $lightColor:#f1f3f2;
@@ -8,9 +9,9 @@ $linkColor:#d0d0d0;
 $warningColor:#f1435a;
 $borderColor:#d0d0d0;
 $normalColor:#444444;
-$contentWidth: 1200px;
+$contentWidth:1200px;
 @mixin inconfont {
-  font-family: 'iconfont'
+  font-family:'iconfont';
 }
 @mixin boxSizing {
   -ms-box-sizing:border-box;
@@ -24,8 +25,8 @@ $contentWidth: 1200px;
   width:100%;
   margin-bottom:20px;
   padding:20px;
-  border: 1px solid $borderColor;
-  @include boxSizing;  
+  border:1px solid $borderColor;
+  @include boxSizing;
 }
 #container {
   width:100%;
@@ -34,7 +35,7 @@ $contentWidth: 1200px;
 }
 #content {
   overflow:hidden;
-  width: $contentWidth;
+  width:$contentWidth;
   margin:0 auto;
   h2 {
     margin-bottom:20px;
@@ -57,33 +58,33 @@ $contentWidth: 1200px;
       padding-right:10px;
       padding-left:1px;
       @include inconfont;
-      color: $primaryColor;
-      font-size: 16px;
-      content: '\f10c'
+      color:$primaryColor;
+      font-size:16px;
+      content:'\f10c';
     }
   }
 }
 .box_srch {
-  position: relative;
+  position:relative;
   width:400px;
-  padding-right: 28px;
+  padding-right:28px;
   height:28px;
   border:1px solid $borderColor;
-  box-sizing: content-box;
-  > input {
+  box-sizing:content-box;
+  >input {
     border:0;
     @include boxSizing();
   }
-  > .btn_srch {
-    position: absolute;
+  >.btn_srch {
+    position:absolute;
     right:0;
     top:0;
     width:28px;
     height:28px;
     &:after {
       @include inconfont();
-      color: #666666;
-      content: '\f002';
+      color:#666666;
+      content:'\f002';
     }
   }
 }
@@ -107,8 +108,8 @@ $contentWidth: 1200px;
     height:28px;
     &:after {
       @include inconfont();
-      color: #666666;
-      content:'\f073'
+      color:#666666;
+      content:'\f073';
     }
   }
   span.ing {
@@ -120,7 +121,7 @@ $contentWidth: 1200px;
 }
 
 .pagenation {
-  text-align: center;
+  text-align:center;
   ul {
     display:inline-block;
     overflow:hidden;
@@ -138,15 +139,15 @@ $contentWidth: 1200px;
         font-weight:600;
         color:$normalColor;
         &:hover {
-          border: 1px solid #444444;
+          border:1px solid #444444;
           background:#444444;
           color:#ffffff;
-        }        
+        }
       }
       .first,.prev,.next,.end {
         border:none;
         font-size:15px;
-        color: #666666;
+        color:#666666;
         &:hover {
           border:none;
           background:none;
@@ -193,37 +194,117 @@ a.btn {
 }
 .btn-primary {
   border:1px solid $primaryColor;
-  background: $primaryColor;
+  background:$primaryColor;
   color:#ffffff;
   &:hover {
-    border: 1px solid $primaryHover;
+    border:1px solid $primaryHover;
     background:$primaryHover;
   }
 }
 .btn-secondary {
   border:1px solid $secondaryColor;
-  background: $secondaryColor;
+  background:$secondaryColor;
   color:#ffffff;
   &:hover {
-    border: 1px solid $secondaryHover;
+    border:1px solid $secondaryHover;
     background:$secondaryHover;
   }
 }
 .btn-light {
   border:1px solid $lightColor;
-  background: $lightColor;
+  background:$lightColor;
   color:#6a6a6a;
   &:hover {
-    border: 1px solid $lightHover;
+    border:1px solid $lightHover;
     background:$lightHover;
   }
 }
 .btn-link {
   border:1px solid $borderColor;
-  background: #ffffff;
+  background:#ffffff;
   color:#bcbcbc;
   &:hover {
-    border: 1px solid $primaryColor;
+    border:1px solid $primaryColor;
     color:$primaryColor;
   }
+}
+/* 테이블 */
+.basic_tbl_list {
+  border-top:2px solid #cdd2d5;
+  border-bottom:1px solid #cdd2d5;
+  th,td {
+    padding:5px 0;
+    font-size:13px;
+    text-align:center;
+  }
+  th {
+    border-bottom:2px solid #cdd2d5;
+    background:#ffffff;
+    font-weight:600;
+  }
+  td {
+    input {
+      vertical-align:middle;
+    }
+  }
+  tr {
+    &:nth-child(odd) td {
+      background:#f1f2f3;
+    }
+    &:hover td {
+      background:#9ba5a7;
+      color:#ffffff;
+      cursor:pointer;
+    }
+  }
+}
+/* 모달팝업 */
+#modal_cont {
+  position:fixed;
+  top:50%;
+  left:50%;
+  width:600px;
+  min-height:400px;
+  padding:15px;
+  border-radius:8px;
+  background:#ffffff;
+  transform:translate(-50%,-50%);
+  z-index:200;
+  box-sizing:border-box;
+  .title {
+    position:relative;
+    .close_pop {
+      position:absolute;
+      right:0;
+      top:0;
+      &:after {
+        @include inconfont();
+        font-size:18px;
+        content:'\f00d';
+      }
+    }
+  }
+}
+.mask {
+  position:fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  background:#000000;
+  opacity:0.7;
+  z-index:199;
+}
+
+/* 라이선스 실제 작업시 해당 CSS그룹 삭제하고 사용*/
+body {
+  padding-bottom:20px;
+}
+#footer {
+  position:fixed;
+  bottom:0;
+  width:100%;
+  padding:10px 0;
+  text-align:center;
+  background:#d0d0d0;
 }

@@ -255,4 +255,94 @@ a.btn > i {
   border: 1px solid #46ba97;
   color: #46ba97;
 }
+
+/* 테이블 */
+.basic_tbl_list {
+  border-top: 2px solid #cdd2d5;
+  border-bottom: 1px solid #cdd2d5;
+}
+
+.basic_tbl_list th, .basic_tbl_list td {
+  padding: 5px 0;
+  font-size: 13px;
+  text-align: center;
+}
+
+.basic_tbl_list th {
+  border-bottom: 2px solid #cdd2d5;
+  background: #ffffff;
+  font-weight: 600;
+}
+
+.basic_tbl_list td input {
+  vertical-align: middle;
+}
+
+.basic_tbl_list tr:nth-child(odd) td {
+  background: #f1f2f3;
+}
+
+.basic_tbl_list tr:hover td {
+  background: #9ba5a7;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* 모달팝업 */
+#modal_cont {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  min-height: 400px;
+  padding: 15px;
+  border-radius: 8px;
+  background: #ffffff;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 200;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#modal_cont .title {
+  position: relative;
+}
+
+#modal_cont .title .close_pop {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#modal_cont .title .close_pop:after {
+  font-family: 'iconfont';
+  font-size: 18px;
+  content: '\f00d';
+}
+
+.mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #000000;
+  opacity: 0.7;
+  z-index: 199;
+}
+
+/* 라이선스 실제 작업시 해당 CSS그룹 삭제하고 사용*/
+body {
+  padding-bottom: 20px;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  background: #d0d0d0;
+}
 /*# sourceMappingURL=compile.css.map */
